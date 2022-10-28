@@ -1,19 +1,19 @@
-export const colors = {
-    purpleColorLighter: "#A42DE8",
-    blueColorLighter: "#318AFF",
-    blueColorDarker: "#2D3DE8",
-    blackColorTranslucentLess: "rgba(0, 0, 0, 0.35)",
-    blackColorTranslucentMore: "rgba(0, 0, 0, 0.7)",
+export const colours = {
+    purpleColourLighter: "#A42DE8",
+    blueColourLighter: "#318AFF",
+    blueColourDarker: "#2D3DE8",
+    blackColourTranslucentLess: "rgba(0, 0, 0, 0.35)",
+    blackColourTranslucentMore: "rgba(0, 0, 0, 0.7)",
     "light": {
-        bgColor: "#ffffff",
-        fgColor: "#800080",
-        fgColorLighter: "rgba(128, 0, 128, 0.5)",
-        headerTextColor: "#ffffff"
+        bgColour: "#ffffff",
+        fgColour: "#800080",
+        fgColourLighter: "rgba(128, 0, 128, 0.5)",
+        headerTextColour: "#ffffff"
     },
     "dark": {
-        bgColor: "#422142",
-        fgColor: "#f0c4f0",
-        fgColorLighter: "rgba(210, 169, 210, 0.5)",
-        headerTextColor: "#f0c4f0",
+        bgColour: "#422142",
+        fgColour: "#f0c4f0",
+        fgColourLighter: "rgba(210, 169, 210, 0.5)",
+        headerTextColour: "#f0c4f0",
     }
 };
