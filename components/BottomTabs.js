@@ -9,17 +9,22 @@ import { icons, sizes } from "../data/theme";
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabs() {
+export default function BottomTabs({ locations, samples, samplesToLocations }) {
     return (
         <Tab.Navigator initialRouteName="Map">
             <Tab.Screen
                 name="Map"
-                component={Map}
+                children={() => <Map locations={locations} />}
                 options={() => tabOptions(icons.map, sizes.icons.map)}
             />
             <Tab.Screen
                 name="NowPlaying"
-                component={NowPlaying}
+                children={() => (
+                    <NowPlaying
+                        locations={locations}
+                        samples={samples}
+                        samplesToLocations={samplesToLocations} />
+                )}
                 options={() => tabOptions(icons.logo, sizes.icons.logo)}
             />
             <Tab.Screen
