@@ -19,3 +19,20 @@ import tabMapDarkPurple from "../assets/icons/tab-map-dark-purple.png";
 import tabMapWhite from "../assets/icons/tab-map-white.png";
 import tabProfileDarkPurple from "../assets/icons/tab-profile-dark-purple.png";
 import tabProfileWhite from "../assets/icons/tab-profile-white.png";
+
+export default {
+    appIcon,
+    appLaunch,
+    pinDarkPurple,
+    pinLightPurple,
+    pinWhite,
+    smileyDarkPurple,
+    smileyLightPurple,
+    smileyWhite,
+    logoDarkPurple,
+    logoWhite,
+    tabMapDarkPurple,
+    tabMapWhite,
+    tabProfileDarkPurple,
+    tabProfileWhite,
+}
