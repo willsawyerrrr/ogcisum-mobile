@@ -1,8 +1,8 @@
 import LinearGradient from 'react-native-linear-gradient';
 
-import TabIcon from "../components/TabIcon.js";
+import TabIcon from "../components/TabIcon";
 
-import { colours } from "../data/theme.js";
+import { colours } from "../data/theme";
 
 export default function tabOptions(icon, size) {
     return {
