@@ -15,7 +15,7 @@ export default function App() {
     return (
         <SafeAreaView>
             <NavigationContainer>
-                <Stack.Navigator>
+                <Stack.Navigator initialRouteName="Map">
                     <Stack.Screen name="Map" component={Map} />
                     <Stack.Screen name="NowPlaying" component={NowPlaying} />
                     <Stack.Screen name="Profile" component={Profile} />
