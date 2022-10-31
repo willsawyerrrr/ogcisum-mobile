@@ -20,7 +20,7 @@ import tabMapWhite from "../assets/icons/tab-map-white.png";
 import tabProfileDarkPurple from "../assets/icons/tab-profile-darkpurple.png";
 import tabProfileWhite from "../assets/icons/tab-profile-white.png";
 
-export default {
+export const icons = {
     appIcon,
     appLaunch,
     pinDarkPurple,
@@ -35,4 +35,4 @@ export default {
     tabMapWhite,
     tabProfileDarkPurple,
     tabProfileWhite,
-}
+};
