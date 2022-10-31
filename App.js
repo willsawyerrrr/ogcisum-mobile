@@ -16,9 +16,9 @@ export default function App() {
         <SafeAreaView>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name="map" component={Map} />
-                    <Stack.Screen name="now-playing" component={NowPlaying} />
-                    <Stack.Screen name="profile" component={Profile} />
+                    <Stack.Screen name="Map" component={Map} />
+                    <Stack.Screen name="NowPlaying" component={NowPlaying} />
+                    <Stack.Screen name="Profile" component={Profile} />
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaView>
