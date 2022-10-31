@@ -87,12 +87,18 @@ export async function readLocations(limit = readLimitUpperBound, order = "asc") 
     let data = await read("locations", limit, order);
     if ("locations" in data) {
         return data.locations.map(location => {
+            const latlong = location.latlong.split(", ");
+
             return {
                 id: location.id,
-                name: location.location
+                name: location.location,
+                latitude: location.latitude,
+                latitude: parseFloat(latlong[0]),
+                longitude: parseFloat(latlong[1])
             };
         });
     }
+
     return [];
 }
 
