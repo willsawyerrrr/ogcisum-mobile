@@ -1,13 +1,13 @@
 import React from "react";
 import { SafeAreaView, useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Map from "./screens/Map";
 import NowPlaying from "./screens/NowPlaying";
 import Profile from "./screens/Profile";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
     const isDarkMode = useColorScheme() === "dark";
@@ -15,11 +15,11 @@ export default function App() {
     return (
         <SafeAreaView>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Map">
-                    <Stack.Screen name="Map" component={Map} />
-                    <Stack.Screen name="NowPlaying" component={NowPlaying} />
-                    <Stack.Screen name="Profile" component={Profile} />
-                </Stack.Navigator>
+                <Tab.Navigator>
+                    <Tab.Screen name="Map" component={Map} />
+                    <Tab.Screen name="NowPlaying" component={NowPlaying} />
+                    <Tab.Screen name="Profile" component={Profile} />
+                </Tab.Navigator>
             </NavigationContainer>
         </SafeAreaView>
     );
