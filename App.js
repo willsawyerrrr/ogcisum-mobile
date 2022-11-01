@@ -4,14 +4,14 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import BottomTabs from "./components/BottomTabs";
 
-import { getLocations, getSamples, getSamplesToLocations } from "./api/api";
+import { readLocations, readSamples, readSamplesToLocations } from "./api/api";
 
 export default async function App() {
     const isDarkMode = useColorScheme() === "dark";
 
-    const locations = await getLocations();
-    const samples = await getSamples();
-    const samplesToLocations = await getSamplesToLocations();
+    const locations = await readLocations();
+    const samples = await readSamples();
+    const samplesToLocations = await readSamplesToLocations();
 
     return (
         <SafeAreaView>
