@@ -48,3 +48,21 @@ export const otherIcons = {
         smiley: iconSource.smileyLightPurple,
     },
 };
+
+export const styles = {
+    body: {
+        fontSize: 20,
+        fontWeight: "300",
+    },
+    button: {},
+    heading: {
+        fontSize: 32,
+        fontWeight: "900",
+    },
+    outerView: {
+        flex: 1,
+        padding: 25,
+    },
+    subheading: {},
+    users: {},
+};
