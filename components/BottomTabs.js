@@ -10,7 +10,6 @@ import { icons, sizes } from "../data/theme";
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs({
-    locations,
     mapState,
     samples,
     samplesToLocations,
@@ -29,7 +28,7 @@ export default function BottomTabs({
                 name="NowPlaying"
                 children={() => (
                     <NowPlaying
-                        locations={locations}
+                        location={mapState.nearbyLocation}
                         samples={samples}
                         samplesToLocations={samplesToLocations} />
                 )}
