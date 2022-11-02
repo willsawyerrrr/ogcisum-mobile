@@ -30,7 +30,8 @@ export default function BottomTabs({
                     <NowPlaying
                         location={mapState.nearbyLocation}
                         samples={samples}
-                        samplesToLocations={samplesToLocations} />
+                        samplesToLocations={samplesToLocations}
+                    />
                 )}
                 options={() => tabOptions(icons.logo, sizes.icons.logo)}
             />

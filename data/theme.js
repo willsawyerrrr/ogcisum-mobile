@@ -48,6 +48,5 @@ export const sizes = {
             height: 41.44,
             width: 37,
         },
-
     }
-}
+};
