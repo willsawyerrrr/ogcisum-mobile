@@ -74,6 +74,8 @@ export default function Map({ mapState, setMapState }) {
         );
     }
 
+    const colourScheme = useColorScheme();
+
     return (
         <MapView
             camera={{
@@ -94,7 +96,7 @@ export default function Map({ mapState, setMapState }) {
                         radius={NEARBY}
                         strokeWidth={3}
                         strokeColor={colours.purpleColourLighter}
-                        fillColor={colours[useColorScheme()].fgColourLighter}
+                        fillColor={colours[colourScheme].fgColourLighter}
                     />
                 )
             })}
