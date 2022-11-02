@@ -92,9 +92,10 @@ export async function readLocations(limit = readLimitUpperBound, order = "asc") 
             return {
                 id: location.id,
                 name: location.location,
-                latitude: location.latitude,
-                latitude: parseFloat(latlong[0]),
-                longitude: parseFloat(latlong[1])
+                coordinates: {
+                    latitude: parseFloat(latlong[0]),
+                    longitude: parseFloat(latlong[1]),
+                },
             };
         });
     }
