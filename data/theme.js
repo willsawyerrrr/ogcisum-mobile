@@ -20,10 +20,25 @@ export const colours = {
     }
 };
 
-export const icons = {
-    map: iconSource.tabMapWhite,
-    logo: iconSource.logoWhite,
-    profile: iconSource.tabProfileWhite,
+export const tabIcons = {
+    map: {
+        source: iconSource.tabMapWhite,
+        height: 32.6,
+        width: 43.2,
+    },
+    logo: {
+        source: iconSource.logoWhite,
+        height: 35.3,
+        width: 164.9,
+    },
+    profile: {
+        source: iconSource.tabProfileWhite,
+        height: 41.44,
+        width: 37,
+    }
+};
+
+export const otherIcons = {
     light: {
         pin: iconSource.pinDarkPurple,
         smiley: iconSource.smileyDarkPurple,
@@ -32,21 +47,4 @@ export const icons = {
         map: iconSource.pinLightPurple,
         smiley: iconSource.smileyLightPurple,
     },
-};
-
-export const sizes = {
-    icons: {
-        map: {
-            height: 32.6,
-            width: 43.2,
-        },
-        logo: {
-            height: 35.3,
-            width: 164.9,
-        },
-        profile: {
-            height: 41.44,
-            width: 37,
-        },
-    }
 };

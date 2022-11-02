@@ -5,7 +5,7 @@ import NowPlaying from "../screens/NowPlaying";
 import Profile from "../screens/Profile";
 
 import tabOptions from "../helpers/tabOptions";
-import { icons, sizes } from "../data/theme";
+import { tabIcons } from "../data/theme";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +22,7 @@ export default function BottomTabs({
                 children={() => (
                     <Map mapState={mapState} setMapState={setMapState} />
                 )}
-                options={() => tabOptions(icons.map, sizes.icons.map)}
+                options={() => tabOptions(tabIcons.map)}
             />
             <Tab.Screen
                 name="NowPlaying"
@@ -33,12 +33,12 @@ export default function BottomTabs({
                         samplesToLocations={samplesToLocations}
                     />
                 )}
-                options={() => tabOptions(icons.logo, sizes.icons.logo)}
+                options={() => tabOptions(tabIcons.logo)}
             />
             <Tab.Screen
                 name="Profile"
                 component={Profile}
-                options={() => tabOptions(icons.profile, sizes.icons.profile)}
+                options={() => tabOptions(tabIcons.profile)}
             />
         </Tab.Navigator>
     );

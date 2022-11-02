@@ -1,6 +1,6 @@
 import { Image, View } from "react-native";
 
-export default function TabIcon({ focused, icon, height, width }) {
+export default function TabIcon({ focused, source, height, width }) {
     return (
         <View
             style={{
@@ -11,7 +11,7 @@ export default function TabIcon({ focused, icon, height, width }) {
             }}
         >
             <Image
-                source={icon}
+                source={source}
                 resizeMode="contain"
                 style={{
                     height: height,
