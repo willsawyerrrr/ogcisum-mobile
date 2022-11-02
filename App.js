@@ -17,6 +17,18 @@ export default function App() {
     /** "Global" list of samples shared to locations. */
     const [samplesToLocations, setSamplesToLocations] = useState([]);
 
+    const initialMapState = {
+        locationPermission: false,
+        locations: locations,
+        userLocation: {
+            latitude: -27.499526188402154,
+            longitude: 152.9728129460468,
+            // defaults to Indooroopilly Shopping Centre
+        },
+        nearbyLocation: {}
+    };
+    const [mapState, setMapState] = useState(initialMapState);
+
     /** Fetches samples from the WMP API. */
     useEffect(() => {
         const fetchSamples = async () => setSamples(await readSamples());
@@ -25,7 +37,11 @@ export default function App() {
 
     /** Fetches locations from the WMP API. */
     useEffect(() => {
-        const fetchLocations = async () => setLocations(await readLocations());
+        const fetchLocations = async () => {
+            const locations = await readLocations();
+            setLocations(locations);
+            setMapState({ ...mapState, locations: locations });
+        };
         fetchLocations();
     }, []);
 
@@ -42,8 +58,11 @@ export default function App() {
             <NavigationContainer>
                 <BottomTabs
                     locations={locations}
+                    mapState={mapState}
                     samples={samples}
-                    samplesToLocations={samplesToLocations} />
+                    samplesToLocations={samplesToLocations}
+                    setMapState={setMapState}
+                />
             </NavigationContainer>
         </SafeAreaView>
     );

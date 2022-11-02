@@ -9,12 +9,20 @@ import { icons, sizes } from "../data/theme";
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabs({ locations, samples, samplesToLocations }) {
+export default function BottomTabs({
+    locations,
+    mapState,
+    samples,
+    samplesToLocations,
+    setMapState
+}) {
     return (
         <Tab.Navigator initialRouteName="Map">
             <Tab.Screen
                 name="Map"
-                children={() => <Map locations={locations} />}
+                children={() => (
+                    <Map mapState={mapState} setMapState={setMapState} />
+                )}
                 options={() => tabOptions(icons.map, sizes.icons.map)}
             />
             <Tab.Screen

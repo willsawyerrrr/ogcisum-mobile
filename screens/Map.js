@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { PermissionsAndroid, useColorScheme } from 'react-native';
 import MapView, { Circle } from "react-native-maps";
 import Geolocation from "@react-native-community/geolocation";
@@ -9,20 +9,7 @@ import { colours } from "../data/theme";
 /** Distance from a location within which to be considered "nearby". */
 const NEARBY = 100;
 
-export default function Map({ locations }) {
-    // Setup state for map data
-    const initialMapState = {
-        locationPermission: false,
-        locations: locations,
-        userLocation: {
-            latitude: -27.499526188402154,
-            longitude: 152.9728129460468,
-            // defaults to Indooroopilly Shopping Centre
-        },
-        nearbyLocation: {}
-    };
-    const [mapState, setMapState] = useState(initialMapState);
-
+export default function Map({ mapState, setMapState }) {
     useEffect(() => {
         async function requestAndroidLocationPermission() {
             try {
@@ -99,8 +86,6 @@ export default function Map({ locations }) {
             showsUserLocation={mapState.locationPermission}
             style={{ flex: 1 }}
         >
-            {console.log(mapState.locations)}
-            {console.log(locations)}
             {mapState.locations.map(location => {
                 return (
                     <Circle
