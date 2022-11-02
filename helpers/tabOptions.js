@@ -16,5 +16,6 @@ export default function tabOptions(icon, size) {
             padding: 24,
             backgroundColor: colours.blueColourDarker,
         },
+        headerShown: false,
     };
 }
