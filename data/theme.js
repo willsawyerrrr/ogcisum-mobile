@@ -1,3 +1,4 @@
+import { StyleSheet } from "react-native";
 import { icons as iconSource } from "../data/icons";
 
 export const colours = {
@@ -20,7 +21,7 @@ export const colours = {
     }
 };
 
-export const tabIcons = {
+export const tabIcons = StyleSheet.create({
     map: {
         source: iconSource.tabMapWhite,
         height: 32.6,
@@ -36,7 +37,7 @@ export const tabIcons = {
         height: 41.44,
         width: 37,
     }
-};
+});
 
 export const otherIcons = {
     light: {
@@ -49,7 +50,7 @@ export const otherIcons = {
     },
 };
 
-export const styles = {
+export const styles = StyleSheet.create({
     body: {
         fontSize: 20,
         fontWeight: "300",
@@ -80,4 +81,4 @@ export const styles = {
             textAlignVertical: "center",
         },
     },
-};
+});
