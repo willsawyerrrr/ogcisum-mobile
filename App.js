@@ -10,13 +10,13 @@ import { colours } from "./data/theme";
 import calculateDistance from "./helpers/calculateDistance";
 
 export default function App() {
-    /** "Global" list of samples. */
+    // "Global" list of samples
     const [samples, setSamples] = useState([]);
 
-    /** "Global" list of locations. */
+    // "Global" list of locations
     const [locations, setLocations] = useState([]);
 
-    /** "Global" list of samples shared to locations. */
+    // "Global" list of samples shared to locations
     const [samplesToLocations, setSamplesToLocations] = useState([]);
 
     const initialMapState = {
@@ -31,13 +31,13 @@ export default function App() {
     };
     const [mapState, setMapState] = useState(initialMapState);
 
-    /** Fetches samples from the WMP API. */
+    // Fetches samples from the WMP API
     useEffect(() => {
         const fetchSamples = async () => setSamples(await readSamples());
         fetchSamples();
     }, []);
 
-    /** Fetches locations from the WMP API. */
+    // Fetches locations from the WMP API
     useEffect(() => {
         const fetchLocations = async () => {
             const locations = await readLocations();
@@ -47,13 +47,13 @@ export default function App() {
         fetchLocations();
     }, []);
 
-    /** Fetches samples shared to locations from the WMP API. */
+    // Fetches samples shared to locations from the WMP API
     useEffect(() => {
         const fetchSamplesToLocations = async () => setSamplesToLocations(await readSamplesToLocations());
         fetchSamplesToLocations();
     }, []);
 
-    /** Get Android location permission. */
+    // Get Android location permission
     useEffect(() => {
         async function requestAndroidLocationPermission() {
             try {
