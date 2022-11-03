@@ -39,7 +39,7 @@ export default function NowPlaying({ location, samples, samplesToLocations }) {
                 <Image source={otherIcons[colourScheme].pin} />
                 <View>
                     <Text style={{ ...styles.heading, color: colours.fgColour }}>
-                        {location.location}
+                        {location.name}
                     </Text>
                     <Text style={{ ...styles.body, color: colours.fgColour }}>
                         {location.suburb}, {location.state}
