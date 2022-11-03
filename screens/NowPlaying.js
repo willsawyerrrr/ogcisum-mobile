@@ -24,7 +24,7 @@ export default function NowPlaying({ location, samples, samplesToLocations }) {
 
     const handlePlay = () => console.log("Playing music");
 
-    return location ? (
+    return !location.nearby ? (
         <View style={{ ...styles.outerView, backgroundColor: colours.bgColour }}>
             <Text style={{ ...styles.heading, color: colours.fgColour }}>
                 No Music Nearby
