@@ -8,7 +8,12 @@ import {
 
 import { otherIcons, styles, colours as colourSource } from "../data/theme";
 
-export default function NowPlaying({ location, samples, samplesToLocations }) {
+export default function NowPlaying({
+    location,
+    samples,
+    samplesToLocations,
+    user
+}) {
     const relevantSampleIds = samplesToLocations.filter(
         sampleToLocation => sampleToLocation.location === location.id
     ).map(

@@ -9,7 +9,7 @@ import {
 
 import { otherIcons, styles, colours as colourSource } from "../data/theme";
 
-export default function Profile() {
+export default function Profile({ setUser, user }) {
     const colourScheme = useColorScheme();
     const colours = colourSource[colourScheme];
 
@@ -32,12 +32,14 @@ export default function Profile() {
             </View>
 
             <TextInput
+                backgroundColor={colours.fgColourLighter}
+                borderRadius={10}
+                onChangeText={(text) => setUser({ ...user, name: text })}
                 placeholder="Enter Your Name"
                 placeholderTextColor={colours.fgColour}
-                textContentType="name"
-                backgroundColor={colours.fgColourLighter}
                 textAlign="center"
-                borderRadius={10}
+                textContentType="name"
+                value={user.name}
             />
         </View>
     );

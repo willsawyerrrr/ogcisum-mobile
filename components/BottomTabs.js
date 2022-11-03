@@ -13,7 +13,9 @@ export default function BottomTabs({
     mapState,
     samples,
     samplesToLocations,
-    setMapState
+    setMapState,
+    setUser,
+    user,
 }) {
     return (
         <Tab.Navigator initialRouteName="Map">
@@ -31,6 +33,7 @@ export default function BottomTabs({
                         location={mapState.nearbyLocation}
                         samples={samples}
                         samplesToLocations={samplesToLocations}
+                        user={user}
                     />
                 )}
                 options={
@@ -39,7 +42,7 @@ export default function BottomTabs({
             />
             <Tab.Screen
                 name="Profile"
-                component={Profile}
+                children={() => <Profile user={user} setUser={setUser} />}
                 options={() => tabOptions(tabIcons.profile)}
             />
         </Tab.Navigator>

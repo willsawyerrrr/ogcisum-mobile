@@ -32,6 +32,13 @@ export default function App() {
     };
     const [mapState, setMapState] = useState(initialMapState);
 
+    // "Global" user
+    const initialUser = {
+        image: null,
+        name: "",
+    }
+    const [user, setUser] = useState(initialUser);
+
     // Fetches samples from the WMP API
     useEffect(() => {
         const fetchSamples = async () => setSamples(await readSamples());
@@ -118,6 +125,8 @@ export default function App() {
                     samples={samples}
                     samplesToLocations={samplesToLocations}
                     setMapState={setMapState}
+                    setUser={setUser}
+                    user={user}
                 />
             </NavigationContainer>
         </SafeAreaView>
