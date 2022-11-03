@@ -92,6 +92,8 @@ export async function readLocations(limit = readLimitUpperBound, order = "asc") 
             return {
                 id: location.id,
                 name: location.location,
+                suburb: location.suburb,
+                state: location.state,
                 coordinates: {
                     latitude: parseFloat(latlong[0]),
                     longitude: parseFloat(latlong[1]),
