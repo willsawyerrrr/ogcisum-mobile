@@ -19,6 +19,7 @@ export default function App() {
     // "Global" list of samples shared to locations
     const [samplesToLocations, setSamplesToLocations] = useState([]);
 
+    // "Global" state of the map and its dependencies
     const initialMapState = {
         locationPermission: false,
         locations: locations,
