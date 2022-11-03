@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, useColorScheme } from "react-native";
+import { PermissionsAndroid, SafeAreaView, useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import Geolocation from "@react-native-community/geolocation";
 
 import BottomTabs from "./components/BottomTabs";
 
 import { readLocations, readSamples, readSamplesToLocations } from "./api/api";
 import { colours } from "./data/theme";
+import calculateDistance from "./helpers/calculateDistance";
 
 export default function App() {
     /** "Global" list of samples. */
@@ -50,6 +52,59 @@ export default function App() {
         const fetchSamplesToLocations = async () => setSamplesToLocations(await readSamplesToLocations());
         fetchSamplesToLocations();
     }, []);
+
+    /** Get Android location permission. */
+    useEffect(() => {
+        async function requestAndroidLocationPermission() {
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                    {
+                        title: "Location Permission",
+                        message: "We need to access your location to show you nearby locations and samples.",
+                        buttonNeutral: "Ask Me Later",
+                        buttonNegative: "Deny",
+                        buttonPositive: "Allow"
+                    }
+                );
+                if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                    setMapState({ ...mapState, locationPermission: true });
+                }
+            } catch (error) {
+                console.warn(error);
+            }
+        };
+
+        if (Platform.OS === "android") {
+            requestAndroidLocationPermission();
+        } else {
+            setMapState({ ...mapState, locationPermission: true });
+        }
+    }, []);
+
+    // Only watch the user's current location when device permission granted
+    if (mapState.locationPermission) {
+        Geolocation.watchPosition(
+            success = (position) => {
+                const userLocation = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                }
+                const nearbyLocation = calculateDistance(userLocation);
+                setMapState({
+                    ...mapState,
+                    userLocation,
+                    nearbyLocation: nearbyLocation
+                });
+            },
+            error = (error) => { console.log(error); },
+            options = {
+                maximumAge: 0,
+                enableHighAccuracy: true,
+                distanceFilter: 0,
+            }
+        );
+    }
 
     const backgroundColour = colours[useColorScheme()].bgColour;
 
