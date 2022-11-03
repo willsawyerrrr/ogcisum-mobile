@@ -129,11 +129,25 @@ export async function readSamples(limit = readLimitUpperBound, order = "asc") {
                 id: sample.id,
                 name: sample.name,
                 type: sample.type,
-                data: JSON.parse(sample.recording_data),
+                recording_data: JSON.parse(sample.recording_data),
                 time: time,
                 date: date,
-                previewing: false
             };
+        }).map((sample) => {
+            return (
+                {
+                    ...sample,
+                    recording_data: [
+                        { B: sample.recording_data["B4"] },
+                        { A: sample.recording_data["A4"] },
+                        { G: sample.recording_data["G3"] },
+                        { F: sample.recording_data["F3"] },
+                        { E: sample.recording_data["E3"] },
+                        { D: sample.recording_data["D3"] },
+                        { C: sample.recording_data["C3"] },
+                    ]
+                }
+            )
         });
     }
     return [];
