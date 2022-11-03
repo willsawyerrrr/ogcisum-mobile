@@ -55,15 +55,18 @@ export default function NowPlaying({
             <TouchableOpacity title="Play Music" onPress={handlePlay} />
 
             <Text style={styles.subheading}>Currently at this location:</Text>
-            <View>
-                <Image source={user.image} />
-                <Text style={{ ...styles.users, color: colours.fgColour }}>
+            <View style={styles.users}>
+                <Image source={user.image} style={{ ...styles.users.image }} />
+                <Text style={{ ...styles.users.text, color: colours.fgColour }}>
                     {user.name}
                 </Text>
             </View>
-            <View>
-                <Image source={otherIcons[colourScheme].smiley} />
-                <Text style={{ ...styles.users, color: colours.fgColour }}>
+            <View style={styles.users}>
+                <Image
+                    source={otherIcons[colourScheme].smiley}
+                    style={{ ...styles.users.image }}
+                />
+                <Text style={{ ...styles.users.text, color: colours.fgColour }}>
                     And others...
                 </Text>
             </View>

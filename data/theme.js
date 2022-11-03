@@ -63,6 +63,21 @@ export const styles = {
         flex: 1,
         padding: 25,
     },
-    subheading: {},
-    users: {},
+    subheading: {
+        fontSize: 24,
+        fontWeight: "700",
+    },
+    users: {
+        flexDirection: "row",
+        image: {
+            height: 100,
+            width: 100,
+            borderColor: colours.dark.fgColour,
+            borderWidth: 5,
+            borderRadius: 50,
+        },
+        text: {
+            textAlignVertical: "center",
+        },
+    },
 };
