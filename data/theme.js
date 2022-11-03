@@ -102,4 +102,7 @@ export const styles = StyleSheet.create({
             textAlignVertical: "center",
         },
     },
+    webView: {
+        display: "none",
+    }
 });
