@@ -51,14 +51,30 @@ export const otherIcons = {
 };
 
 export const styles = StyleSheet.create({
+    addPhoto: {},
     body: {
         fontSize: 20,
         fontWeight: "300",
     },
-    button: {},
+    button: {
+        fontSize: 20,
+        fontWeight: "500",
+    },
+    changePhoto: {},
     heading: {
         fontSize: 32,
         fontWeight: "900",
+    },
+    image: {
+        height: 100,
+        width: 100,
+    },
+    imageView: {
+        borderColor: colours.purpleColourLighter,
+        borderRadius: 10,
+        borderStyle: "solid",
+        borderWidth: 3,
+        marginBottom: 20,
     },
     outerView: {
         flex: 1,
@@ -67,6 +83,11 @@ export const styles = StyleSheet.create({
     subheading: {
         fontSize: 24,
         fontWeight: "700",
+    },
+    textInput: {
+        borderRadius: 10,
+        textAlign: "center",
+        textContentType: "name",
     },
     users: {
         flexDirection: "row",

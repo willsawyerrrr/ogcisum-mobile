@@ -1,11 +1,13 @@
 import {
     Image,
     Text,
-    TouchableOpacity,
     View,
     useColorScheme,
     TextInput
 } from "react-native";
+
+import Photo from "../components/Photo";
+import PhotoPicker from "../components/PhotoPicker";
 
 import { otherIcons, styles, colours as colourSource } from "../data/theme";
 
@@ -31,14 +33,15 @@ export default function Profile({ setUser, user }) {
                 </View>
             </View>
 
+            {user.image && <Photo image={user.image} setUser={setUser} />}
+            {user.image || <PhotoPicker setUser={setUser} />}
+
             <TextInput
                 backgroundColor={colours.fgColourLighter}
-                borderRadius={10}
                 onChangeText={(text) => setUser({ ...user, name: text })}
                 placeholder="Enter Your Name"
                 placeholderTextColor={colours.fgColour}
-                textAlign="center"
-                textContentType="name"
+                style={styles.textInput}
                 value={user.name}
             />
         </View>
