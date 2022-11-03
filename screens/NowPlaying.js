@@ -29,16 +29,7 @@ export default function NowPlaying({
 
     const handlePlay = () => console.log("Playing music");
 
-    return !location.nearby ? (
-        <View style={{ ...styles.outerView, backgroundColor: colours.bgColour }}>
-            <Text style={{ ...styles.heading, color: colours.fgColour }}>
-                No Music Nearby
-            </Text>
-            <Text style={{ ...styles.body, color: colours.fgColour }}>
-                It's Oh So Quiet...
-            </Text>
-        </View>
-    ) : (
+    return location.nearby ? (
         <View style={{ ...styles.outerView, backgroundColor: colours.bgColour }}>
             <View>
                 <Image source={otherIcons[colourScheme].pin} />
@@ -70,6 +61,15 @@ export default function NowPlaying({
                     And others...
                 </Text>
             </View>
+        </View>
+    ) : (
+        <View style={{ ...styles.outerView, backgroundColor: colours.bgColour }}>
+            <Text style={{ ...styles.heading, color: colours.fgColour }}>
+                No Music Nearby
+            </Text>
+            <Text style={{ ...styles.body, color: colours.fgColour }}>
+                It's Oh So Quiet...
+            </Text>
         </View>
     );
 }
