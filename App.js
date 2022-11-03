@@ -6,7 +6,7 @@ import Geolocation from "@react-native-community/geolocation";
 import BottomTabs from "./components/BottomTabs";
 
 import { readLocations, readSamples, readSamplesToLocations } from "./api/api";
-import { colours } from "./data/theme";
+import { colours as colourSource } from "./data/theme";
 import calculateDistance from "./helpers/calculateDistance";
 
 export default function App() {
@@ -107,10 +107,10 @@ export default function App() {
         );
     }
 
-    const backgroundColour = colours[useColorScheme()].bgColour;
+    const colours = colourSource[useColorScheme()];
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: backgroundColour }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: colours.bgColour }}>
             <NavigationContainer>
                 <BottomTabs
                     locations={locations}
