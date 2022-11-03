@@ -33,7 +33,9 @@ export default function BottomTabs({
                         samplesToLocations={samplesToLocations}
                     />
                 )}
-                options={() => tabOptions(tabIcons.logo)}
+                options={
+                    () => tabOptions(tabIcons.logo, mapState.nearbyLocation)
+                }
             />
             <Tab.Screen
                 name="Profile"

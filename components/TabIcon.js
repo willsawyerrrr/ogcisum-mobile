@@ -1,6 +1,6 @@
-import { Image, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
-export default function TabIcon({ focused, source, height, width }) {
+export default function TabIcon({ focused, location, source, height, width }) {
     return (
         <View
             style={{
@@ -19,6 +19,11 @@ export default function TabIcon({ focused, source, height, width }) {
                     opacity: focused ? 1.0 : 0.5,
                 }}
             />
+            {location?.nearby &&
+                <Text style={{ width: 150, opacity: focused ? 1.0 : 0.5 }}>
+                    There's Music Nearby
+                </Text>
+            }
         </View>
     );
 }
