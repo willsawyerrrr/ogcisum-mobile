@@ -150,6 +150,9 @@ const commonStyles = StyleSheet.create({
             width: 100,
         },
         text: {
+            flex: 1,
+            fontSize: 24,
+            left: 20,
             textAlignVertical: "center",
         },
     },
