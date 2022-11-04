@@ -45,7 +45,7 @@ export const otherIcons = {
         smiley: iconSource.smileyDarkPurple,
     },
     dark: {
-        map: iconSource.pinLightPurple,
+        pin: iconSource.pinLightPurple,
         smiley: iconSource.smileyLightPurple,
     },
 };
