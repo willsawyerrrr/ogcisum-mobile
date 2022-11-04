@@ -148,10 +148,10 @@ const darkOnlyStyles = StyleSheet.create({
         backgroundColor: colours.dark.bgColour,
     },
     button: {
-        backgroundColor: colours.dark.bgColour,
+        backgroundColor: colours.dark.fgColour,
     },
     buttonText: {
-        color: colours.dark.fgColour,
+        color: colours.dark.bgColour,
     },
     heading: {
         color: colours.dark.fgColour,
@@ -185,10 +185,10 @@ const lightOnlyStyles = StyleSheet.create({
         backgroundColor: colours.light.bgColour,
     },
     button: {
-        backgroundColor: colours.light.bgColour,
+        backgroundColor: colours.light.fgColour,
     },
     buttonText: {
-        color: colours.light.fgColour,
+        color: colours.light.bgColour,
     },
     heading: {
         color: colours.light.fgColour,
