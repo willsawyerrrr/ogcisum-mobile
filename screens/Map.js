@@ -5,7 +5,7 @@ import { darkStyles, lightStyles } from "../data/theme";
 
 import { NEARBY } from '../data/map';
 
-export default function Map({ mapState, setMapState }) {
+export default function Map({ mapState }) {
     const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     return (
