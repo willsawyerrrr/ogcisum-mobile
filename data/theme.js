@@ -85,6 +85,7 @@ const commonStyles = StyleSheet.create({
     },
     linearGradient: {
         colors: [colours.purpleColourLighter, colours.blueColourDarker],
+        flex: 1,
     },
     mapCircle: {
         strokeColor: colours.purpleColourLighter,

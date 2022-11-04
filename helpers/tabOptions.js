@@ -14,7 +14,10 @@ export default function tabOptions(icon, location = undefined) {
         ),
         tabBarShowLabel: false,
         tabBarBackground: () => (
-            <LinearGradient colors={styles.linearGradient.colors} />
+            <LinearGradient
+                colors={styles.linearGradient.colors}
+                style={styles.linearGradient}
+            />
         ),
         tabBarStyle: styles.tabBar,
         headerShown: false,
