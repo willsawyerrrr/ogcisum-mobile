@@ -48,7 +48,7 @@ export default function NearbyMusic({ location, samples, user }) {
             />
             <MyButton
                 onPress={webViewState.playing ? handleStop : handleStart}
-                text={(webViewState.playing ? "Stop " : "Start ") + "Playback"}
+                text={(webViewState.playing ? "Stop " : "Play ") + "Music"}
             />
             <OnLocation user={user} />
         </View>
