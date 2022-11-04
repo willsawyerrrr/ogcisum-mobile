@@ -23,18 +23,18 @@ export const colours = {
 
 export const tabIcons = StyleSheet.create({
     map: {
-        source: iconSource.tabMapWhite,
         height: 32.6,
+        source: iconSource.tabMapWhite,
         width: 43.2,
     },
     logo: {
-        source: iconSource.logoWhite,
         height: 35.3,
+        source: iconSource.logoWhite,
         width: 164.9,
     },
     profile: {
-        source: iconSource.tabProfileWhite,
         height: 41.44,
+        source: iconSource.tabProfileWhite,
         width: 37,
     }
 });
@@ -120,9 +120,9 @@ const commonStyles = StyleSheet.create({
         fontWeight: "700",
     },
     tabBar: {
+        backgroundColor: colours.blueColourDarker,
         height: 80,
         padding: 24,
-        backgroundColor: colours.blueColourDarker,
     },
     tabIconView: {
         alignItems: "center",
@@ -140,11 +140,11 @@ const commonStyles = StyleSheet.create({
     users: {
         flexDirection: "row",
         image: {
+            borderColor: colours.dark.fgColour,
+            borderRadius: 50,
+            borderWidth: 5,
             height: 100,
             width: 100,
-            borderColor: colours.dark.fgColour,
-            borderWidth: 5,
-            borderRadius: 50,
         },
         text: {
             textAlignVertical: "center",
@@ -157,8 +157,8 @@ const commonStyles = StyleSheet.create({
 
 const darkOnlyStyles = StyleSheet.create({
     body: {
-        color: colours.dark.fgColour,
         backgroundColor: colours.dark.bgColour,
+        color: colours.dark.fgColour,
     },
     button: {
         backgroundColor: colours.dark.fgColour,
@@ -194,8 +194,8 @@ const darkOnlyStyles = StyleSheet.create({
 
 const lightOnlyStyles = StyleSheet.create({
     body: {
-        color: colours.light.fgColour,
         backgroundColor: colours.light.bgColour,
+        color: colours.light.fgColour,
     },
     button: {
         backgroundColor: colours.light.fgColour,
