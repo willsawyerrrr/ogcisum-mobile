@@ -141,6 +141,7 @@ const commonStyles = StyleSheet.create({
     },
     users: {
         flexDirection: "row",
+        marginTop: 20,
         image: {
             borderColor: colours.dark.fgColour,
             borderRadius: 50,
