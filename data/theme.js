@@ -66,7 +66,10 @@ const commonStyles = StyleSheet.create({
         fontWeight: "700",
         textAlign: "center",
     },
-    changePhoto: {},
+    changePhoto: {
+        bottom: 25,
+        position: "absolute",
+    },
     heading: {
         fontSize: 36,
         fontWeight: "900",
