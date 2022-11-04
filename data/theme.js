@@ -153,7 +153,8 @@ const commonStyles = {
         },
         text: {
             flex: 1,
-            fontSize: 24,
+            fontSize: 20,
+            fontWeight: "500",
             left: 20,
             textAlignVertical: "center",
         },

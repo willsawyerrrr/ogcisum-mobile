@@ -11,18 +11,22 @@ export default function OnLocation({ user }) {
             <Text style={styles.subheading}>Currently At This Location:</Text>
             <View style={styles.users}>
                 <Image source={user.image} style={styles.users.image} />
-                <Text style={styles.users.text}>
-                    {user.name}
-                </Text>
+                <View style={styles.users.textView}>
+                    <Text style={styles.users.text}>
+                        {user.name}
+                    </Text>
+                </View>
             </View>
             <View style={styles.users}>
                 <Image
                     source={otherIcons[colourScheme].smiley}
                     style={styles.users.image}
                 />
-                <Text style={styles.users.text}>
-                    And others...
-                </Text>
+                <View style={styles.users.textView}>
+                    <Text style={styles.users.text}>
+                        And others...
+                    </Text>
+                </View>
             </View>
         </>
     );
