@@ -3,7 +3,7 @@ import WebView from "react-native-webview";
 
 import { darkStyles, lightStyles } from "../data/theme";
 
-export default function HiddenWebView({ setWebViewState, webViewRef }) {
+export default function HiddenWebView({ onLoad, webViewRef }) {
     const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     return (
@@ -15,9 +15,7 @@ export default function HiddenWebView({ setWebViewState, webViewRef }) {
                     uri: "https://wmp.interaction.courses/playback-webview/"
                 }}
                 pullToRefreshEnabled={true}
-                onLoad={() => {
-                    setWebViewState((oldState) => ({ ...oldState, loaded: true }))
-                }}
+                onLoad={onLoad}
             />
         </View>
     );

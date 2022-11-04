@@ -21,6 +21,14 @@ export default function NearbyMusic({ location, samples, user }) {
     const setupInjection = `setupParts(${JSON.stringify(samples)})`;
 
     /**
+     * Triggers the web view to load the samples.
+     */
+    function onLoad() {
+        setWebViewState({ ...webViewState, loaded: true });
+        webViewRef.current.injectJavaScript(setupInjection);
+    }
+
+    /**
      * Triggers the web view to start playing samples and updates its state.
      */
     function handleStart() {
@@ -35,7 +43,6 @@ export default function NearbyMusic({ location, samples, user }) {
     function handleStop() {
         webViewRef.current.injectJavaScript("stopPlayback()");
         webViewRef.current.reload();
-        webViewRef.current.injectJavaScript(setupInjection);
         setWebViewState({ ...webViewState, playing: false });
     }
 
@@ -49,7 +56,7 @@ export default function NearbyMusic({ location, samples, user }) {
                 />
             </View>
             <HiddenWebView
-                setWebViewState={setWebViewState}
+                onLoad={onLoad}
                 webViewRef={webViewRef}
             />
             <View>
