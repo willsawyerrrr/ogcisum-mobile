@@ -43,8 +43,8 @@ export default function NearbyMusic({ location, samples, user }) {
         <View style={styles.outerView}>
             <LocationHeading location={location} />
             <HiddenWebView
+                setWebViewState={setWebViewState}
                 webViewRef={webViewRef}
-                webViewState={webViewState}
             />
             <MyButton
                 onPress={webViewState.playing ? handleStop : handleStart}
