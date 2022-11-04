@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
+
 import { icons as iconSource } from "../data/icons";
+import mergeObjects from "../helpers/mergeObjects";
 
 export const colours = {
     purpleColourLighter: "#A42DE8",
@@ -50,7 +52,7 @@ export const otherIcons = {
     },
 };
 
-const commonStyles = StyleSheet.create({
+const commonStyles = {
     addPhoto: {},
     body: {
         fontSize: 20,
@@ -159,9 +161,9 @@ const commonStyles = StyleSheet.create({
     webView: {
         display: "none",
     }
-});
+};
 
-const darkOnlyStyles = StyleSheet.create({
+const darkOnlyStyles = {
     body: {
         backgroundColor: colours.dark.bgColour,
         color: colours.dark.fgColour,
@@ -196,9 +198,9 @@ const darkOnlyStyles = StyleSheet.create({
             color: colours.dark.fgColour,
         },
     },
-});
+};
 
-const lightOnlyStyles = StyleSheet.create({
+const lightOnlyStyles = {
     body: {
         backgroundColor: colours.light.bgColour,
         color: colours.light.fgColour,
@@ -233,16 +235,10 @@ const lightOnlyStyles = StyleSheet.create({
             color: colours.light.fgColour,
         },
     },
-});
+};
 
 const commonStyleEntries = Object.entries(commonStyles);
 
-export let darkStyles = Object.fromEntries(commonStyleEntries);
-for (let key in darkOnlyStyles) {
-    darkStyles[key] = { ...darkStyles[key], ...darkOnlyStyles[key] };
-}
+export let darkStyles = mergeObjects(Object.fromEntries(commonStyleEntries), darkOnlyStyles);
 
-export let lightStyles = Object.fromEntries(commonStyleEntries);
-for (let key in lightOnlyStyles) {
-    lightStyles[key] = { ...lightStyles[key], ...lightOnlyStyles[key] };
-}
+export let lightStyles = mergeObjects(Object.fromEntries(commonStyleEntries), lightOnlyStyles);
