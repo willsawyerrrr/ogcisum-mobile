@@ -93,6 +93,8 @@ export const styles = StyleSheet.create({
     },
     textInput: {
         borderRadius: 10,
+        fontSize: 18,
+        fontWeight: "600",
         textAlign: "center",
         textContentType: "name",
     },
