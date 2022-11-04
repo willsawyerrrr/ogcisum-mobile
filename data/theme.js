@@ -120,7 +120,6 @@ const commonStyles = StyleSheet.create({
         fontWeight: "700",
     },
     tabBar: {
-        backgroundColor: colours.blueColourDarker,
         height: 80,
         padding: 24,
     },
