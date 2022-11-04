@@ -13,9 +13,9 @@ export default function tabOptions(icon, location = undefined) {
             <TabIcon focused={focused} location={location} {...icon} />
         ),
         tabBarShowLabel: false,
-        tabBarBackground: () => {
+        tabBarBackground: () => (
             <LinearGradient colors={styles.linearGradient.colors} />
-        },
+        ),
         tabBarStyle: styles.tabBar,
         headerShown: false,
     };
