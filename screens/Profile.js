@@ -22,7 +22,6 @@ export default function Profile({ setUser, user }) {
             padding: 25,
         }}>
             <View>
-                <Image source={otherIcons[colourScheme].pin} />
                 <View>
                     <Text style={{ ...styles.heading, color: colours.fgColour }}>
                         Edit Profile
