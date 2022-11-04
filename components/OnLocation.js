@@ -8,7 +8,7 @@ export default function OnLocation({ user }) {
 
     return (
         <>
-            <Text style={styles.subheading}>Currently at this location:</Text>
+            <Text style={styles.subheading}>Currently At This Location:</Text>
             <View style={styles.users}>
                 <Image source={user.image} style={styles.users.image} />
                 <Text style={styles.users.text}>
