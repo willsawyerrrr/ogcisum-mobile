@@ -211,12 +211,14 @@ const lightOnlyStyles = StyleSheet.create({
     },
 });
 
-export let darkStyles = new Object(commonStyles);
+const commonStyleEntries = Object.entries(commonStyles);
+
+export let darkStyles = Object.fromEntries(commonStyleEntries);
 for (let key in darkOnlyStyles) {
     darkStyles[key] = { ...darkStyles[key], ...darkOnlyStyles[key] };
 }
 
-export let lightStyles = new Object(commonStyles);
+export let lightStyles = Object.fromEntries(commonStyleEntries);
 for (let key in lightOnlyStyles) {
     lightStyles[key] = { ...lightStyles[key], ...lightOnlyStyles[key] };
 }
