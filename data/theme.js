@@ -57,9 +57,9 @@ const commonStyles = StyleSheet.create({
         fontWeight: "300",
     },
     button: {
+        borderRadius: 10,
         paddingHorizontal: 20,
         paddingVertical: 10,
-        borderRadius: 10,
     },
     buttonText: {
         fontSize: 18,
@@ -67,7 +67,7 @@ const commonStyles = StyleSheet.create({
     },
     changePhoto: {},
     heading: {
-        fontSize: 32,
+        fontSize: 36,
         fontWeight: "900",
     },
     image: {
@@ -99,8 +99,10 @@ const commonStyles = StyleSheet.create({
         padding: 25,
     },
     pin: {
-        height: 10,
-        width: 5,
+        alignSelf: "center",
+        height: 70,
+        marginRight: 20,
+        width: 40,
     },
     subheading: {
         fontSize: 24,
