@@ -7,9 +7,9 @@ export default function LocationHeading({ location }) {
     const styles = (colourScheme === "dark") ? darkStyles : lightStyles;
 
     return (
-        <View>
+        <View style={styles.locationHeading}>
             <Image source={otherIcons[colourScheme].pin} style={styles.pin} />
-            <View>
+            <View style={styles.locationHeadingInner}>
                 <Text style={styles.heading}>
                     {location.name}
                 </Text>

@@ -64,6 +64,7 @@ const commonStyles = StyleSheet.create({
     buttonText: {
         fontSize: 18,
         fontWeight: "700",
+        textAlign: "center",
     },
     changePhoto: {},
     heading: {
@@ -86,6 +87,15 @@ const commonStyles = StyleSheet.create({
     linearGradient: {
         colors: [colours.purpleColourLighter, colours.blueColourDarker],
         flex: 1,
+    },
+    locationHeading: {
+        flexDirection: "row",
+        height: 130,
+        marginBottom: 20,
+    },
+    locationHeadingInner: {
+        flex: 4,
+        flexDirection: "column",
     },
     mapCircle: {
         strokeColor: colours.purpleColourLighter,
