@@ -106,6 +106,7 @@ const commonStyles = StyleSheet.create({
     },
     outerView: {
         flex: 1,
+        justifyContent: "space-between",
         padding: 25,
     },
     pin: {
