@@ -83,6 +83,7 @@ const commonStyles = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 3,
         flex: 1,
+        justifyContent: "center",
         marginBottom: 25,
         marginTop: 25,
         overflow: "hidden",
