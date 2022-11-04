@@ -37,9 +37,9 @@ export default function Profile({ setUser, user }) {
 
             <TextInput
                 backgroundColor={colours.fgColourLighter}
+                color={colours.fgColour}
                 onChangeText={(text) => setUser({ ...user, name: text })}
                 placeholder="Enter Your Name"
-                placeholderTextColor={colours.fgColour}
                 style={styles.textInput}
                 value={user.name}
             />
