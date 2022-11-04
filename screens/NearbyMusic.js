@@ -2,11 +2,11 @@ import { useRef, useState } from "react";
 import { View, useColorScheme } from "react-native";
 
 import HiddenWebView from "../components/HiddenWebView";
+import LocationHeading from "../components/LocationHeading";
+import MyButton from "../components/MyButton";
+import OnLocation from "../components/OnLocation";
 
 import { colours as colourSource, styles } from "../data/theme";
-import LocationHeading from "./LocationHeading";
-import MyButton from "./MyButton";
-import OnLocation from "./OnLocation";
 
 export default function NearbyMusic({ location, samples, user }) {
     const colourScheme = useColorScheme();

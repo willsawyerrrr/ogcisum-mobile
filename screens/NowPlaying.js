@@ -1,5 +1,5 @@
-import NearbyMusic from "../components/NearbyMusic";
-import NoNearbyMusic from "../components/NoNearbyMusic";
+import NearbyMusic from "./NearbyMusic";
+import NoNearbyMusic from "./NoNearbyMusic";
 
 export default function NowPlaying({
     location,
