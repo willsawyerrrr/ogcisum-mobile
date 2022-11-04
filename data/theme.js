@@ -72,17 +72,17 @@ const commonStyles = StyleSheet.create({
         fontWeight: "900",
     },
     image: {
-        height: 100,
-        width: 100,
+        height: "100%",
+        width: "100%",
     },
     imageView: {
         alignItems: "center",
         borderRadius: 15,
         borderWidth: 3,
         flex: 1,
-        justifyContent: "space-around",
         marginBottom: 25,
         marginTop: 25,
+        overflow: "hidden",
     },
     linearGradient: {
         colors: [colours.purpleColourLighter, colours.blueColourDarker],
