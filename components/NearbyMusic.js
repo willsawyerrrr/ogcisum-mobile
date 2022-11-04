@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
-import { Button, View, useColorScheme } from "react-native";
+import { View, useColorScheme } from "react-native";
 
 import HiddenWebView from "../components/HiddenWebView";
 
 import { colours as colourSource, styles } from "../data/theme";
 import LocationHeading from "./LocationHeading";
+import MyButton from "./MyButton";
 import OnLocation from "./OnLocation";
 
 export default function NearbyMusic({ location, samples, user }) {
@@ -46,9 +47,11 @@ export default function NearbyMusic({ location, samples, user }) {
                 webViewRef={webViewRef}
                 webViewState={webViewState}
             />
-            <Button
+            <MyButton
+                backgroundColour={colours.bgColour}
+                colour={colours.fgColour}
                 onPress={webViewState.playing ? handleStop : handleStart}
-                title={(webViewState.playing ? "Stop " : "Start ") + "Playback"}
+                text={(webViewState.playing ? "Stop " : "Start ") + "Playback"}
             />
             <OnLocation user={user} />
         </View>

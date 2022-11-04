@@ -1,10 +1,13 @@
-import { TouchableOpacity, useColorScheme, View } from "react-native";
+import { View, useColorScheme } from "react-native";
 import { launchImageLibrary } from "react-native-image-picker";
 
-import { colours, styles } from "../data/theme";
+import MyButton from "./MyButton";
+
+import { colours as colourSource, styles } from "../data/theme";
 
 export default function PhotoPicker({ setUser }) {
     const colourScheme = useColorScheme();
+    const colours = colourSource[colourScheme];
 
     async function addPhoto() {
         const result = await launchImageLibrary();
@@ -14,16 +17,18 @@ export default function PhotoPicker({ setUser }) {
     };
 
     return (
-        <View style={{ ...styles.imageView, borderStyle: "dashed"}}>
-            <TouchableOpacity
-                title="Add Photo"
+        <View style={
+            {
+                ...styles.imageView,
+                borderStyle: "dashed",
+                borderColor: colours.fgColourLighter,
+            }
+        }>
+            <MyButton
+                backgroundColour={colours.fgColour}
+                colour={colours.bgColour}
                 onPress={addPhoto}
-                style={{
-                    ...styles.button,
-                    ...styles.addPhoto,
-                    backgroundColor: colours[colourScheme].bgColour,
-                    color: colours[colourScheme].fgColor,
-                }}
+                text="Add Photo"
             />
         </View>
     );

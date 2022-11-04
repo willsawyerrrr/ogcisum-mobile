@@ -1,10 +1,12 @@
-import { TouchableOpacity, useColorScheme, View } from "react-native";
+import { useColorScheme, View } from "react-native";
 import { launchImageLibrary } from "react-native-image-picker";
 
-import { styles } from "../data/theme";
+import { colours as colourSource, styles } from "../data/theme";
+import MyButton from "./MyButton";
 
 export default function Photo({ image, setUser }) {
     const colourScheme = useColorScheme();
+    const colours = colourSource[colourScheme];
 
     async function changePhoto() {
         const result = await launchImageLibrary();
@@ -16,15 +18,11 @@ export default function Photo({ image, setUser }) {
     return (
         <View style={{ ...styles.imageView, borderStyle: "solid" }}>
             <Image style={styles.image} source={image} />
-            <TouchableOpacity
-                title="Change Photo"
+            <MyButton
+                backgroundColour={colours.bgColour}
+                colour={colours.fgColour}
                 onPress={changePhoto}
-                style={{
-                    ...styles.button,
-                    ...styles.changePhoto,
-                    backgroundColor: colours[colourScheme].bgColour,
-                    color: colours[colourScheme].fgColor,
-                }}
+                text="Change Photo"
             />
         </View>
     );

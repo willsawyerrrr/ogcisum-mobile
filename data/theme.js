@@ -57,8 +57,13 @@ export const styles = StyleSheet.create({
         fontWeight: "300",
     },
     button: {
-        fontSize: 20,
-        fontWeight: "500",
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 10,
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: "700",
     },
     changePhoto: {},
     heading: {
@@ -70,11 +75,13 @@ export const styles = StyleSheet.create({
         width: 100,
     },
     imageView: {
-        borderColor: colours.purpleColourLighter,
-        borderRadius: 10,
-        borderStyle: "solid",
+        alignItems: "center",
+        borderRadius: 15,
         borderWidth: 3,
-        marginBottom: 20,
+        flex: 1,
+        justifyContent: "space-around",
+        marginBottom: 25,
+        marginTop: 25,
     },
     outerView: {
         flex: 1,
