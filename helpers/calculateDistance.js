@@ -1,5 +1,7 @@
 import getDistance from "geolib/es/getPreciseDistance";
 
+import NEARBY from "../data/map";
+
 // Function to retrieve location nearest to current user location
 export default function calculateDistance(mapState, userLocation) {
     const nearestLocations = mapState.locations.map(location => {

@@ -3,8 +3,7 @@ import MapView, { Circle } from "react-native-maps";
 
 import { colours } from "../data/theme";
 
-/** Distance from a location within which to be considered "nearby". */
-const NEARBY = 100;
+import { NEARBY } from '../data/map';
 
 export default function Map({ mapState, setMapState }) {
     const colourScheme = useColorScheme();
