@@ -13,6 +13,7 @@ export default function NoNearbyMusic() {
             <Text style={styles.body}>
                 It's Oh So Quiet...
             </Text>
+            <View style={{ flex: 1 }} />
         </View>
     );
 }
