@@ -98,6 +98,10 @@ const commonStyles = StyleSheet.create({
         flex: 1,
         padding: 25,
     },
+    pin: {
+        height: 10,
+        width: 5,
+    },
     subheading: {
         fontSize: 24,
         fontWeight: "700",

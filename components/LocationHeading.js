@@ -8,7 +8,7 @@ export default function LocationHeading({ location }) {
 
     return (
         <View>
-            <Image source={otherIcons[colourScheme].pin} />
+            <Image source={otherIcons[colourScheme].pin} style={styles.pin} />
             <View>
                 <Text style={styles.heading}>
                     {location.name}
