@@ -121,7 +121,7 @@ const commonStyles = StyleSheet.create({
     },
     subheading: {
         fontSize: 24,
-        fontWeight: "700",
+        fontWeight: "800",
     },
     tabBar: {
         height: 80,
