@@ -8,6 +8,8 @@ import { darkStyles, lightStyles } from "../data/theme";
 export default function Profile({ setUser, user }) {
     const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
+    const updateImage = (image) => setUser((user) => ({ ...user, image }));
+
     return (
         <View style={styles.outerView}>
             <View>
@@ -21,8 +23,9 @@ export default function Profile({ setUser, user }) {
                 </View>
             </View>
 
-            {user.image && <Photo image={user.image} setUser={setUser} />}
-            {user.image || <PhotoPicker setUser={setUser} />}
+            {user.image
+                ? <Photo image={user.image} updateImage={updateImage} />
+                : <PhotoPicker updateImage={updateImage} />}
 
             <TextInput
                 onChangeText={(text) => setUser({ ...user, name: text })}
