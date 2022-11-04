@@ -10,7 +10,7 @@ export default function PhotoPicker({ setUser }) {
 
     async function addPhoto() {
         const result = await launchImageLibrary();
-        if (typeof result.assets[0] == "object") {
+        if (typeof result.assets?.at(0) === "object") {
             setUser((user) => ({ ...user, image: result.assets[0] }));
         }
     };
