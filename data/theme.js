@@ -124,7 +124,6 @@ const commonStyles = StyleSheet.create({
     },
     tabBar: {
         height: 80,
-        padding: 24,
     },
     tabIconView: {
         alignItems: "center",
