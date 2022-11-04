@@ -1,8 +1,9 @@
-import { useColorScheme, View } from "react-native";
+import { View, useColorScheme } from "react-native";
 import { launchImageLibrary } from "react-native-image-picker";
 
-import { colours as colourSource, styles } from "../data/theme";
 import MyButton from "./MyButton";
+
+import { colours as colourSource, styles } from "../data/theme";
 
 export default function Photo({ image, setUser }) {
     const colourScheme = useColorScheme();

@@ -1,15 +1,9 @@
-import {
-    Image,
-    Text,
-    View,
-    useColorScheme,
-    TextInput
-} from "react-native";
+import { Text, View, useColorScheme, TextInput } from "react-native";
 
 import Photo from "../components/Photo";
 import PhotoPicker from "../components/PhotoPicker";
 
-import { otherIcons, styles, colours as colourSource } from "../data/theme";
+import { colours as colourSource, styles } from "../data/theme";
 
 export default function Profile({ setUser, user }) {
     const colourScheme = useColorScheme();

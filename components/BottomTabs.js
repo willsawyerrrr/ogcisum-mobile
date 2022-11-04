@@ -4,8 +4,8 @@ import Map from "../screens/Map";
 import NowPlaying from "../screens/NowPlaying";
 import Profile from "../screens/Profile";
 
-import tabOptions from "../helpers/tabOptions";
 import { tabIcons } from "../data/theme";
+import tabOptions from "../helpers/tabOptions";
 
 const Tab = createBottomTabNavigator();
 

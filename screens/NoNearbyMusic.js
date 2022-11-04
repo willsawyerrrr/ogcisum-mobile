@@ -1,4 +1,4 @@
-import { Text, useColorScheme, View } from "react-native";
+import { Text, View, useColorScheme } from "react-native";
 
 import { colours as colourSource, styles } from "../data/theme";
 
