@@ -1,22 +1,13 @@
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, useColorScheme } from "react-native";
 
-import { styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
-export default function MyButton({ backgroundColour, colour, onPress, text }) {
+export default function MyButton({ onPress, text }) {
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
+
     return (
-        <TouchableOpacity
-            onPress={onPress}
-            style={{
-                ...styles.button,
-                backgroundColor: backgroundColour,
-            }}
-        >
-            <Text
-                style={{
-                    ...styles.buttonText,
-                    color: colour,
-                }}
-            >
+        <TouchableOpacity onPress={onPress} style={styles.button}>
+            <Text style={styles.buttonText}>
                 {text}
             </Text>
         </TouchableOpacity>

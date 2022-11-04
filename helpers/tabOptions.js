@@ -1,27 +1,22 @@
+import { useColorScheme } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import TabIcon from "../components/TabIcon";
 
-import { colours } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function tabOptions(icon, location = undefined) {
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
+
     return {
         tabBarIcon: ({ focused }) => (
             <TabIcon focused={focused} location={location} {...icon} />
         ),
         tabBarShowLabel: false,
         tabBarBackground: () => {
-            <LinearGradient
-                colors={
-                    [colours.purpleColourLighter, colours.blueColourDarker]
-                }
-            />
+            <LinearGradient colors={styles.linearGradient.colors} />
         },
-        tabBarStyle: {
-            height: 80,
-            padding: 24,
-            backgroundColor: colours.blueColourDarker,
-        },
+        tabBarStyle: styles.tabBar,
         headerShown: false,
     };
 }

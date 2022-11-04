@@ -1,19 +1,19 @@
 import { Image, Text, View, useColorScheme } from "react-native";
 
-import { colours as colourSource, otherIcons, styles } from "../data/theme";
+import { darkStyles, lightStyles, otherIcons } from "../data/theme";
 
 export default function LocationHeading({ location }) {
     const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (colourScheme === "dark") ? darkStyles : lightStyles;
 
     return (
         <View>
             <Image source={otherIcons[colourScheme].pin} />
             <View>
-                <Text style={{ ...styles.heading, color: colours.fgColour }}>
+                <Text style={styles.heading}>
                     {location.name}
                 </Text>
-                <Text style={{ ...styles.body, color: colours.fgColour }}>
+                <Text style={styles.body}>
                     {location.suburb}, {location.state}
                 </Text>
             </View>

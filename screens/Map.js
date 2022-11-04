@@ -1,12 +1,12 @@
 import { useColorScheme } from 'react-native';
 import MapView, { Circle } from "react-native-maps";
 
-import { colours } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 import { NEARBY } from '../data/map';
 
 export default function Map({ mapState, setMapState }) {
-    const colourScheme = useColorScheme();
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     return (
         <MapView
@@ -18,7 +18,7 @@ export default function Map({ mapState, setMapState }) {
                 zoom: 15 // Zoom level For Android
             }}
             showsUserLocation={mapState.locationPermission}
-            style={{ flex: 1 }}
+            style={styles.mapView}
         >
             {mapState.locations.map(location => {
                 return (
@@ -26,9 +26,9 @@ export default function Map({ mapState, setMapState }) {
                         key={location.id}
                         center={location.coordinates}
                         radius={NEARBY}
-                        strokeWidth={3}
-                        strokeColor={colours.purpleColourLighter}
-                        fillColor={colours[colourScheme].fgColourLighter}
+                        strokeWidth={styles.mapCircle.strokeWidth}
+                        strokeColor={styles.mapCircle.strokeColor}
+                        fillColor={styles.mapCircle.fillColor}
                     />
                 )
             })}

@@ -3,24 +3,19 @@ import { Text, View, useColorScheme, TextInput } from "react-native";
 import Photo from "../components/Photo";
 import PhotoPicker from "../components/PhotoPicker";
 
-import { colours as colourSource, styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function Profile({ setUser, user }) {
-    const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     return (
-        <View style={{
-            backgroundColor: colours.bgColour,
-            flex: 1,
-            padding: 25,
-        }}>
+        <View style={styles.outerView}>
             <View>
                 <View>
-                    <Text style={{ ...styles.heading, color: colours.fgColour }}>
+                    <Text style={styles.heading}>
                         Edit Profile
                     </Text>
-                    <Text style={{ ...styles.body, color: colours.fgColour }}>
+                    <Text style={styles.body}>
                         Mirror, Mirror On The Wall...
                     </Text>
                 </View>
@@ -30,8 +25,6 @@ export default function Profile({ setUser, user }) {
             {user.image || <PhotoPicker setUser={setUser} />}
 
             <TextInput
-                backgroundColor={colours.fgColourLighter}
-                color={colours.fgColour}
                 onChangeText={(text) => setUser({ ...user, name: text })}
                 placeholder="Enter Your Name"
                 style={styles.textInput}

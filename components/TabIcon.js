@@ -1,15 +1,12 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, useColorScheme } from "react-native";
+
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function TabIcon({ focused, location, source, height, width }) {
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
+
     return (
-        <View
-            style={{
-                alignItems: "center",
-                justifyContent: "center",
-                height: 80,
-                width: 50,
-            }}
-        >
+        <View style={styles.tabIconView}>
             <Image
                 source={source}
                 resizeMode="contain"

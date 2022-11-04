@@ -1,26 +1,26 @@
 import { Image, Text, View, useColorScheme } from "react-native";
 
-import { colours as colourSource, otherIcons, styles } from "../data/theme";
+import { darkStyles, lightStyles, otherIcons } from "../data/theme";
 
 export default function OnLocation({ user }) {
     const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (colourScheme === "dark") ? darkStyles : lightStyles;
 
     return (
         <>
             <Text style={styles.subheading}>Currently at this location:</Text>
             <View style={styles.users}>
-                <Image source={user.image} style={{ ...styles.users.image }} />
-                <Text style={{ ...styles.users.text, color: colours.fgColour }}>
+                <Image source={user.image} style={styles.users.image} />
+                <Text style={styles.users.text}>
                     {user.name}
                 </Text>
             </View>
             <View style={styles.users}>
                 <Image
                     source={otherIcons[colourScheme].smiley}
-                    style={{ ...styles.users.image }}
+                    style={styles.users.image}
                 />
-                <Text style={{ ...styles.users.text, color: colours.fgColour }}>
+                <Text style={styles.users.text}>
                     And others...
                 </Text>
             </View>

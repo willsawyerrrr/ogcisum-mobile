@@ -6,11 +6,10 @@ import LocationHeading from "../components/LocationHeading";
 import MyButton from "../components/MyButton";
 import OnLocation from "../components/OnLocation";
 
-import { colours as colourSource, styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function NearbyMusic({ location, samples, user }) {
-    const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     const initialWebViewState = { loaded: false, playing: false };
     const [webViewState, setWebViewState] = useState(initialWebViewState);
@@ -41,15 +40,13 @@ export default function NearbyMusic({ location, samples, user }) {
     }
 
     return (
-        <View style={{ ...styles.outerView, backgroundColor: colours.bgColour }}>
+        <View style={styles.outerView}>
             <LocationHeading location={location} />
             <HiddenWebView
                 webViewRef={webViewRef}
                 webViewState={webViewState}
             />
             <MyButton
-                backgroundColour={colours.bgColour}
-                colour={colours.fgColour}
                 onPress={webViewState.playing ? handleStop : handleStart}
                 text={(webViewState.playing ? "Stop " : "Start ") + "Playback"}
             />

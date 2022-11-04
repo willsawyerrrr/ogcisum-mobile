@@ -3,11 +3,10 @@ import { launchImageLibrary } from "react-native-image-picker";
 
 import MyButton from "./MyButton";
 
-import { colours as colourSource, styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function PhotoPicker({ setUser }) {
-    const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     async function addPhoto() {
         const result = await launchImageLibrary();
@@ -17,18 +16,11 @@ export default function PhotoPicker({ setUser }) {
     };
 
     return (
-        <View style={
-            {
-                ...styles.imageView,
-                borderStyle: "dashed",
-                borderColor: colours.fgColourLighter,
-            }
-        }>
+        <View style={{ ...styles.imageView, borderStyle: "dashed" }}>
             <MyButton
-                backgroundColour={colours.fgColour}
-                colour={colours.bgColour}
                 onPress={addPhoto}
                 text="Add Photo"
+                style={styles.addPhoto}
             />
         </View>
     );

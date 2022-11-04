@@ -50,7 +50,7 @@ export const otherIcons = {
     },
 };
 
-export const styles = StyleSheet.create({
+const commonStyles = StyleSheet.create({
     addPhoto: {},
     body: {
         fontSize: 20,
@@ -83,6 +83,16 @@ export const styles = StyleSheet.create({
         marginBottom: 25,
         marginTop: 25,
     },
+    linearGradient: {
+        colors: [colours.purpleColourLighter, colours.blueColourDarker],
+    },
+    mapCircle: {
+        strokeColor: colours.purpleColourLighter,
+        strokeWidth: 3,
+    },
+    mapView: {
+        flex: 1,
+    },
     outerView: {
         flex: 1,
         padding: 25,
@@ -90,6 +100,17 @@ export const styles = StyleSheet.create({
     subheading: {
         fontSize: 24,
         fontWeight: "700",
+    },
+    tabBar: {
+        height: 80,
+        padding: 24,
+        backgroundColor: colours.blueColourDarker,
+    },
+    tabIconView: {
+        alignItems: "center",
+        justifyContent: "center",
+        height: 80,
+        width: 50,
     },
     textInput: {
         borderRadius: 10,
@@ -115,3 +136,87 @@ export const styles = StyleSheet.create({
         display: "none",
     }
 });
+
+const darkOnlyStyles = StyleSheet.create({
+    body: {
+        color: colours.dark.fgColour,
+        backgroundColor: colours.dark.bgColour,
+    },
+    button: {
+        backgroundColor: colours.dark.bgColour,
+    },
+    buttonText: {
+        color: colours.dark.fgColour,
+    },
+    heading: {
+        color: colours.dark.fgColour,
+    },
+    imageView: {
+        borderColor: colours.dark.fgColourLighter,
+    },
+    mapCircle: {
+        fillColor: colours.dark.fgColourLighter
+    },
+    outerView: {
+        backgroundColor: colours.dark.bgColour,
+    },
+    subheading: {
+        color: colours.dark.fgColour,
+    },
+    textInput: {
+        backgroundColor: colours.dark.fgColourLighter,
+        color: colours.dark.fgColour,
+    },
+    users: {
+        text: {
+            color: colours.dark.fgColour,
+        },
+    },
+});
+
+const lightOnlyStyles = StyleSheet.create({
+    body: {
+        color: colours.light.fgColour,
+        backgroundColor: colours.light.bgColour,
+    },
+    button: {
+        backgroundColor: colours.light.bgColour,
+    },
+    buttonText: {
+        color: colours.light.fgColour,
+    },
+    heading: {
+        color: colours.light.fgColour,
+    },
+    imageView: {
+        borderColor: colours.light.fgColourLighter,
+    },
+    mapCircle: {
+        fillColor: colours.light.fgColourLighter
+    },
+    outerView: {
+        backgroundColor: colours.light.bgColour,
+    },
+    subheading: {
+        color: colours.light.fgColour,
+    },
+    textInput: {
+        backgroundColor: colours.light.fgColourLighter,
+        color: colours.light.fgColour,
+    },
+    users: {
+        text: {
+            color: colours.light.fgColour,
+        },
+    },
+});
+
+export let darkStyles = new Object(commonStyles);
+for (let key in darkOnlyStyles) {
+    darkStyles[key] = { ...darkStyles[key], ...darkOnlyStyles[key] };
+}
+
+export let lightStyles = new Object(commonStyles);
+for (let key in lightOnlyStyles) {
+    lightStyles[key] = { ...lightStyles[key], ...lightOnlyStyles[key] };
+}

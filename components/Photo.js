@@ -3,11 +3,10 @@ import { launchImageLibrary } from "react-native-image-picker";
 
 import MyButton from "./MyButton";
 
-import { colours as colourSource, styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function Photo({ image, setUser }) {
-    const colourScheme = useColorScheme();
-    const colours = colourSource[colourScheme];
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     async function changePhoto() {
         const result = await launchImageLibrary();
@@ -20,10 +19,9 @@ export default function Photo({ image, setUser }) {
         <View style={{ ...styles.imageView, borderStyle: "solid" }}>
             <Image style={styles.image} source={image} />
             <MyButton
-                backgroundColour={colours.bgColour}
-                colour={colours.fgColour}
                 onPress={changePhoto}
                 text="Change Photo"
+                style={styles.changePhoto}
             />
         </View>
     );

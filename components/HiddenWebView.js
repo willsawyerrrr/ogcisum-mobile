@@ -1,8 +1,11 @@
+import { useColorScheme } from "react-native";
 import WebView from "react-native-webview";
 
-import { styles } from "../data/theme";
+import { darkStyles, lightStyles } from "../data/theme";
 
 export default function HiddenWebView({ setWebViewState, webViewRef }) {
+    const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
+
     return (
         <WebView
             ref={ref => webViewRef.current = ref}
