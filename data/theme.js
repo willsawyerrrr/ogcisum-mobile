@@ -131,8 +131,8 @@ const commonStyles = {
     tabIconView: {
         alignItems: "center",
         justifyContent: "center",
-        height: 80,
-        width: 50,
+        height: "100%",
+        padding: 10,
     },
     textInput: {
         borderRadius: 10,

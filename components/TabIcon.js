@@ -1,6 +1,6 @@
 import { Image, Text, View, useColorScheme } from "react-native";
 
-import { darkStyles, lightStyles } from "../data/theme";
+import { colours, darkStyles, lightStyles } from "../data/theme";
 
 export default function TabIcon({
     focused,
@@ -11,9 +11,11 @@ export default function TabIcon({
     isLogo
 }) {
     const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
+    const background = (focused)
+        ? { backgroundColor: colours.blackColourTranslucentLess } : {};
 
     return (
-        <View style={styles.tabIconView}>
+        <View style={{ ...styles.tabIconView, ...background }}>
             <Image
                 source={source}
                 resizeMode="contain"
