@@ -37,7 +37,7 @@ export default function BottomTabs({
                     />
                 )}
                 options={
-                    () => tabOptions(tabIcons.logo, mapState.nearbyLocation)
+                    () => tabOptions(tabIcons.logo, mapState.nearbyLocation, true)
                 }
             />
             <Tab.Screen

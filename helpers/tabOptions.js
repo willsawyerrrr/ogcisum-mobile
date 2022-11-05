@@ -5,12 +5,17 @@ import TabIcon from "../components/TabIcon";
 
 import { darkStyles, lightStyles } from "../data/theme";
 
-export default function tabOptions(icon, location = undefined) {
+export default function tabOptions(icon, location = undefined, isLogo = false) {
     const styles = (useColorScheme() === "dark") ? darkStyles : lightStyles;
 
     return {
         tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} location={location} {...icon} />
+            <TabIcon
+                focused={focused}
+                location={location}
+                isLogo={isLogo}
+                {...icon}
+            />
         ),
         tabBarShowLabel: false,
         tabBarBackground: () => (
