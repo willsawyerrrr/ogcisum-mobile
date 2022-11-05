@@ -93,7 +93,7 @@ export default function App() {
     // Only watch the user's current location when device permission granted
     if (mapState.locationPermission) {
         Geolocation.watchPosition(
-            success = (position) => {
+            (position) => {
                 const userLocation = {
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
@@ -105,8 +105,8 @@ export default function App() {
                     nearbyLocation: nearbyLocation
                 });
             },
-            error = (error) => { console.log(error); },
-            options = {
+            (error) => { console.log(error); },
+            {
                 maximumAge: 0,
                 enableHighAccuracy: true,
                 distanceFilter: 0,
