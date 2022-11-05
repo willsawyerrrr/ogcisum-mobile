@@ -98,7 +98,7 @@ export default function App() {
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 }
-                const nearbyLocation = calculateDistance(userLocation);
+                const nearbyLocation = calculateDistance(mapState, userLocation);
                 setMapState({
                     ...mapState,
                     userLocation,
