@@ -120,7 +120,6 @@ export default function App() {
         <SafeAreaView style={{ flex: 1, backgroundColor: colours.bgColour }}>
             <NavigationContainer>
                 <BottomTabs
-                    locations={locations}
                     mapState={mapState}
                     samples={samples}
                     samplesToLocations={samplesToLocations}
