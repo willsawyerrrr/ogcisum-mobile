@@ -9,13 +9,13 @@ export default function HiddenWebView({ onLoad, webViewRef }) {
     return (
         <View style={styles.webView}>
             <WebView
-                ref={ref => webViewRef.current = ref}
+                onLoad={onLoad}
                 originWhitelist={["*"]}
+                pullToRefreshEnabled={true}
+                ref={ref => webViewRef.current = ref}
                 source={{
                     uri: "https://wmp.interaction.courses/playback-webview/"
                 }}
-                pullToRefreshEnabled={true}
-                onLoad={onLoad}
             />
         </View>
     );

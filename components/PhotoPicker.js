@@ -19,8 +19,8 @@ export default function PhotoPicker({ updateImage }) {
         <View style={{ ...styles.imageView, borderStyle: "dashed" }}>
             <MyButton
                 onPress={addPhoto}
-                text="Add Photo"
                 style={styles.addPhoto}
+                text="Add Photo"
             />
         </View>
     );

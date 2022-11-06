@@ -20,8 +20,8 @@ export default function Photo({ image, updateImage }) {
             <Image style={styles.image} source={{ uri: image.uri }} />
             <MyButton
                 onPress={changePhoto}
-                text="Change Photo"
                 style={styles.changePhoto}
+                text="Change Photo"
             />
         </View>
     );

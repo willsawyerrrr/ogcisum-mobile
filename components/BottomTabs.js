@@ -20,14 +20,13 @@ export default function BottomTabs({
     return (
         <Tab.Navigator initialRouteName="Map">
             <Tab.Screen
-                name="Map"
                 children={() => (
                     <Map mapState={mapState} setMapState={setMapState} />
                 )}
+                name="Map"
                 options={() => tabOptions(tabIcons.map)}
             />
             <Tab.Screen
-                name="NowPlaying"
                 children={() => (
                     <NowPlaying
                         location={mapState.nearbyLocation}
@@ -36,13 +35,14 @@ export default function BottomTabs({
                         user={user}
                     />
                 )}
+                name="NowPlaying"
                 options={
                     () => tabOptions(tabIcons.logo, mapState.nearbyLocation, true)
                 }
             />
             <Tab.Screen
-                name="Profile"
                 children={() => <Profile user={user} setUser={setUser} />}
+                name="Profile"
                 options={() => tabOptions(tabIcons.profile)}
             />
         </Tab.Navigator>

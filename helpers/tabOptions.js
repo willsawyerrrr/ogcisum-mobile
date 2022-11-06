@@ -12,8 +12,8 @@ export default function tabOptions(icon, location = undefined, isLogo = false) {
         tabBarIcon: ({ focused }) => (
             <TabIcon
                 focused={focused}
-                location={location}
                 isLogo={isLogo}
+                location={location}
                 {...icon}
             />
         ),

@@ -11,10 +11,11 @@ export default function Map({ mapState }) {
     return (
         <MapView
             camera={{
-                center: mapState.userLocation,
-                pitch: 0, // Angle of 3D map
-                heading: 0, // Compass direction
                 altitude: 3000, // Zoom level for iOS
+                center: mapState.userLocation,
+                followUserLocation: true,
+                heading: 0, // Compass direction
+                pitch: 0, // Angle of 3D map
                 zoom: 15 // Zoom level For Android
             }}
             showsUserLocation={mapState.locationPermission}
@@ -23,12 +24,12 @@ export default function Map({ mapState }) {
             {mapState.locations.map(location => {
                 return (
                     <Circle
-                        key={location.id}
                         center={location.coordinates}
+                        fillColor={styles.mapCircle.fillColor}
+                        key={location.id}
                         radius={NEARBY}
                         strokeWidth={styles.mapCircle.strokeWidth}
                         strokeColor={styles.mapCircle.strokeColor}
-                        fillColor={styles.mapCircle.fillColor}
                     />
                 )
             })}

@@ -21,16 +21,16 @@ export default function TabIcon({
     return (
         <View style={{ ...styles.tabIconView, ...background }}>
             <Image
-                source={source}
                 resizeMode="contain"
+                source={source}
                 style={{
                     height: height,
-                    width: width,
                     opacity: opaque ? 1.0 : 0.5,
+                    width: width,
                 }}
             />
             {location?.nearby && isLogo &&
-                <Text style={{ width: 150, opacity: opaque ? 1.0 : 0.5 }}>
+                <Text style={{ opacity: opaque ? 1.0 : 0.5, width: 150 }}>
                     There's Music Nearby
                 </Text>
             }
