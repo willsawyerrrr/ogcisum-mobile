@@ -16,7 +16,11 @@ export default function NowPlaying({
     );
 
     return location.nearby ? (
-        <NearbyMusic location={location} samples={relevantSamples} user={user} />
+        <NearbyMusic
+            location={location}
+            samples={relevantSamples}
+            user={user}
+        />
     ) : (
         <NoNearbyMusic />
     );
