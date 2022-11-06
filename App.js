@@ -13,16 +13,13 @@ export default function App() {
     // "Global" list of samples
     const [samples, setSamples] = useState([]);
 
-    // "Global" list of locations
-    const [locations, setLocations] = useState([]);
-
     // "Global" list of samples shared to locations
     const [samplesToLocations, setSamplesToLocations] = useState([]);
 
     // "Global" state of the map and its dependencies
     const initialMapState = {
         locationPermission: false,
-        locations: locations,
+        locations: [],
         userLocation: {
             latitude: -27.499526188402154,
             longitude: 152.9728129460468,
@@ -48,9 +45,7 @@ export default function App() {
     // Fetches locations from the WMP API
     useEffect(() => {
         const fetchLocations = async () => {
-            const locations = await readLocations();
-            setLocations(locations);
-            setMapState({ ...mapState, locations: locations });
+            setMapState({ ...mapState, locations: await readLocations() });
         };
         fetchLocations();
     }, []);
