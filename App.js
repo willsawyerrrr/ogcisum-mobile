@@ -52,7 +52,9 @@ export default function App() {
 
     // Fetches samples shared to locations from the WMP API
     useEffect(() => {
-        const fetchSamplesToLocations = async () => setSamplesToLocations(await readSamplesToLocations());
+        const fetchSamplesToLocations = async () => {
+            setSamplesToLocations(await readSamplesToLocations())
+        };
         fetchSamplesToLocations();
     }, []);
 
