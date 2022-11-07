@@ -90,26 +90,28 @@ export default function App() {
     // Only watch the user's current location when device permission granted
     useEffect(() => {
         if (mapState.locationPermission) {
-            Geolocation.watchPosition(
-                (position) => {
-                    const userLocation = {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
+            setInterval(() => {
+                Geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLocation = {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude
+                        }
+                        const nearbyLocation = calculateDistance(mapState, userLocation);
+                        console.log(mapState);
+                        setMapState({
+                            ...mapState,
+                            userLocation,
+                            nearbyLocation: nearbyLocation
+                        });
+                    },
+                    (error) => { console.log(error); },
+                    {
+                        enableHighAccuracy: true,
+                        distanceFilter: 0,
                     }
-                    const nearbyLocation = calculateDistance(mapState, userLocation);
-                    setMapState({
-                        ...mapState,
-                        userLocation,
-                        nearbyLocation: nearbyLocation
-                    });
-                },
-                (error) => { console.log(error); },
-                {
-                    maximumAge: 0,
-                    enableHighAccuracy: true,
-                    distanceFilter: 0,
-                }
-            );
+                );
+            }, 3000);
         }
     }, []);
 
