@@ -16,7 +16,7 @@ export default function TabIcon({
 
     // if this tab is focused, or if it's the OgCiSum logo when the user is near
     // a location, then its icon (and text if shown) should be fully opaque
-    const opaque = focused || (isLogo && location.nearby);
+    const opaque = focused || (isLogo && location?.nearby);
 
     return (
         <View style={{ ...styles.tabIconView, ...background }}>
